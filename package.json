@@ -1,22 +1,27 @@
 {
   "name": "make-array",
   "version": "0.1.0",
-  "description": "make-array",
+  "description": "Creates a real Array from anything.",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "sh test.sh"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/kaelzhang/make-array.git"
   },
   "keywords": [
-    "make-array"
+    "make-array",
+    "to-array",
+    "makearray",
+    "toarray",
+    "array",
+    "iterate"
   ],
   "engines": { 
-    "node": ">=0.11.0"
+    "node": ">=0.10.0"
   },
-  "author": "kaelzhang",
+  "author": "kael",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaelzhang/make-array/issues"
@@ -24,5 +29,10 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "cortex": {
+    "devDependencies": {
+      "chai": "*"
+    }
   }
 }
