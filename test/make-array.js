@@ -3,6 +3,11 @@
 var expect = require('chai').expect;
 var makeArray = require('../');
 
+var regex = /abc/;
+var func = function(){};
+var long_func = function(a, b, c, d, e, f){};
+var date = new Date;
+var obj = {};
 
 var cases = [
   ['undefined', undefined, []],
@@ -11,6 +16,13 @@ var cases = [
   ['array', [1, 2], [1, 2]],
   ['number', 1, [1]],
   ['string', '1', ['1']],
+  ['regex', regex, [regex]],
+  ['function', func, [func]],
+  ['function with many arguments', long_func, [long_func]],
+  ['boolean', true, [true]],
+  ['false', false, [false]],
+  ['date', date, [date]],
+  ['object', obj, [obj]],
   ['arguments 1, 2, 3', getArguments(1, 2, 3), [1, 2, 3]],
   ['array-like object', {
     '0': 1,

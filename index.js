@@ -23,24 +23,36 @@ function makeArray (subject, host){
   }
 
   host || (host = []);
-
-  if (
-    subject.length == null
-    || Object(subject) !== subject
-
-    // `window` also has 'length' property
-    || 'setInterval' in subject
-  ) {
-    host.push(subject);
-
-  } else {
+  if (isArrayLikeObject(subject)) {
     // IE fails on collections and <select>.options (refers to <select>)
     // use subject clone instead of Array.prototype.slice
     clonePureArray(subject, host);
+
+  } else {
+    host.push(subject);
   }
 
   return host;
 };
+
+
+// altered from jQuery
+function isArrayLikeObject (subject) {
+  var length = subject.length;
+
+  if (
+    typeof subject === 'function'
+    || Object(subject) !== subject
+    || typeof length !== 'number'
+    // `window` already has a property `length`
+    || 'setInterval' in subject
+  ) {
+    return false;
+  }
+
+  return length === 0
+    || length > 0 && (length - 1) in subject;
+}
 
 
 /**
