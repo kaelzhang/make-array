@@ -14,6 +14,7 @@ $ npm install make-array --save
 var makeArray = require('make-array');
 makeArray();              // []
 makeArray(undefined);     // []
+makeArray(null);          // []
 makeArray(1);             // [1]
 makeArray([1, 2]);        // [1, 2]
 makeArray({

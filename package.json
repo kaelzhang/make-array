@@ -1,6 +1,6 @@
 {
   "name": "make-array",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Creates a real Array from almost anything.",
   "main": "index.js",
   "scripts": {
