@@ -48,6 +48,10 @@ result;           // [1, 2, {}, []];
 result === host;  // true
 ``` 
 
+## Changelog
+
+**1.0.0**: bump version to mark it as stable.
+
 ## License
 
 MIT
