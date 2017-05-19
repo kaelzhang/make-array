@@ -1,4 +1,8 @@
-# make-array [![NPM version](https://badge.fury.io/js/make-array.svg)](http://badge.fury.io/js/make-array) [![Build Status](https://travis-ci.org/kaelzhang/make-array.svg?branch=master)](https://travis-ci.org/kaelzhang/make-array) [![Dependency Status](https://gemnasium.com/kaelzhang/make-array.svg)](https://gemnasium.com/kaelzhang/make-array)
+[![NPM version](https://badge.fury.io/js/make-array.svg)](http://badge.fury.io/js/make-array)
+[![Build Status](https://travis-ci.org/kaelzhang/make-array.svg?branch=master)](https://travis-ci.org/kaelzhang/make-array)
+[![Dependency Status](https://gemnasium.com/kaelzhang/make-array.svg)](https://gemnasium.com/kaelzhang/make-array)
+
+# make-array
 
 Creates a real Array from almost anything.
 
@@ -46,7 +50,7 @@ function foo(){
 var result = makeArray(foo({}, []), host);
 result;           // [1, 2, {}, []];
 result === host;  // true
-``` 
+```
 
 ## Changelog
 
