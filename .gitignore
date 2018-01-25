@@ -17,6 +17,7 @@ neurons
 *.sass-cache
 package-lock.json
 /make-array.js
+*.tgz
 
 # OS or Editor folders
 .DS_Store
