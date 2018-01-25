@@ -1,13 +1,9 @@
-'use strict';
-
-module.exports = makeArray;
-
 // @param {all} subject
 //     if nodelist, returns an array which generated from the nodelist
 //     if Array, returns the array itself
 //     otherwise, returns an array contains the subject
 // @param {Array=} host
-function makeArray (subject, host){
+export default function makeArray (subject, host){
   // false    -> [false]
   // null     -> []
   // undefined  -> makeArray() -> []
@@ -35,7 +31,6 @@ function makeArray (subject, host){
   return host;
 };
 
-
 // altered from jQuery
 function isArrayLikeObject (subject) {
   var length = subject.length;
@@ -53,7 +48,6 @@ function isArrayLikeObject (subject) {
   return length === 0
     || length > 0 && (length - 1) in subject;
 }
-
 
 /**
  * clone an object as a pure subject, and ignore non-number properties
