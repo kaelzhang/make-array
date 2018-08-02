@@ -1,12 +1,11 @@
 {
   "name": "make-array",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Creates a real Array from almost anything.",
   "main": "make-array.js",
   "module": "index.js",
   "scripts": {
-    "build": "babel index.js -o make-array.js",
-    "test": "npm run build && sh test.sh"
+    "test": "sh test.sh"
   },
   "files": [
     "index.js",
@@ -33,10 +32,6 @@
     "url": "https://github.com/kaelzhang/make-array/issues"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-register": "^6.24.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "chai": "*",
     "mocha": "*"
   },

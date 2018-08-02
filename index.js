@@ -3,37 +3,42 @@
 //     if Array, returns the array itself
 //     otherwise, returns an array contains the subject
 // @param {Array=} host
-export default function makeArray (subject, host){
+module.exports = function (subject, host) {
   // false    -> [false]
   // null     -> []
   // undefined  -> makeArray() -> []
   if (subject === undefined || subject === null) {
-    return host || [];
+    return host || []
   }
 
   // if is already an array
-  if(Object.prototype.toString.call(subject) === '[object Array]'){
+  if (isArray(subject)) {
     return host
       ? host.concat(subject)
-      : subject;
+      : subject
   }
 
-  host || (host = []);
+  host || (host = [])
   if (isArrayLikeObject(subject)) {
     // IE fails on collections and <select>.options (refers to <select>)
     // use subject clone instead of Array.prototype.slice
-    clonePureArray(subject, host);
+    clonePureArray(subject, host)
 
   } else {
-    host.push(subject);
+    host.push(subject)
   }
 
-  return host;
-};
+  return host
+}
+
+var toString = Object.prototype.toString
+function isArray (subject) {
+  return toString.call(subject) === '[object Array]'
+}
 
 // altered from jQuery
 function isArrayLikeObject (subject) {
-  var length = subject.length;
+  var length = subject.length
 
   if (
     typeof subject === 'function'
@@ -42,11 +47,11 @@ function isArrayLikeObject (subject) {
     // `window` already has a property `length`
     || 'setInterval' in subject
   ) {
-    return false;
+    return false
   }
 
   return length === 0
-    || length > 0 && (length - 1) in subject;
+    || length > 0 && (length - 1) in subject
 }
 
 /**
@@ -54,13 +59,13 @@ function isArrayLikeObject (subject) {
  * @param {Array} subject
  * @param {Array|Object} host required, receiver which the subject be cloned to
  */
-function clonePureArray(subject, host){
-  var i = subject.length;
-  var start = host.length;
+function clonePureArray (subject, host) {
+  var i = subject.length
+  var start = host.length
 
-  while(i --){
-    host[start + i] = subject[i];
+  while (i --) {
+    host[start + i] = subject[i]
   }
 
-  return host;
-};
+  return host
+}
